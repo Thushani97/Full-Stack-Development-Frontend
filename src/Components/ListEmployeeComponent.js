@@ -1,8 +1,19 @@
-import React, { useState } from 'react'
+import { cleanup } from '@testing-library/react'
+import React, { useEffect, useState } from 'react'
+import EmployeeService from '../services/EmployeeService'
 
 const ListEmployeeComponent = () => {
   
     const[employees, setEmployees]=useState([])  
+   
+    useEffect(() => {
+        EmployeeService.getAllEmployees().then((response)=>{
+            setEmployees(response.data)
+            console.log(response.data);
+        }).catch(erorr=>{
+            console.log(erorr)
+        })
+    }, [])
 
     return (
         <div className='container'>
