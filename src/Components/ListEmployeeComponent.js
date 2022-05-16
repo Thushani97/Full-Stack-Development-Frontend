@@ -1,5 +1,6 @@
 import { cleanup } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import EmployeeService from '../services/EmployeeService'
 
 const ListEmployeeComponent = () => {
@@ -18,6 +19,8 @@ const ListEmployeeComponent = () => {
     return (
         <div className='container'>
             <h2 className='text-center'> List Employees </h2>  
+            {/* Below add employee show as a button */}
+            <Link to ="/add-employee" className='btn btn-primary mb-2'>Add Employee</Link>
             <table className='table table-bordered table-striped'>
                 {/* Add table headers */}
                 <thead>
