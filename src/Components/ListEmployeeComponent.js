@@ -24,10 +24,12 @@ const ListEmployeeComponent = () => {
             <table className='table table-bordered table-striped'>
                 {/* Add table headers */}
                 <thead>
+                    {/* Add column names */}
                     <th>Employee Id</th>
                     <th>Employee First Name</th>
                     <th>Employee Last Name</th>
                     <th>Employee Email Id</th>
+                    <th>Actions</th>
                 </thead>
                 {/* Add the table body */}
                 <tbody>
@@ -39,6 +41,9 @@ const ListEmployeeComponent = () => {
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.emailId}</td>
+                                <td>
+                                    <Link className='btn btn-info' to={'/edit-employee/${employee.id}'}> Update</Link>
+                                </td>
                             </tr>
                         )
                     }
